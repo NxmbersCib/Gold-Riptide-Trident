@@ -1,0 +1,26 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "Scratch Trident",
+        "description": "",
+        "version": "1.0.0",
+        "uuid": "43a46fe1-f888-4b4b-84bf-bf331b4128ef",
+        "min_engine_version": [1, 21, 20]
+    },
+    "modules": [
+        {
+            "type": "data",
+            "description": "behaviors",
+            "version": "1.0.0",
+            "uuid": "680e6ce0-85a9-4dc2-8c9f-8212f426f16f"
+        },
+        {
+            "type": "script",
+            "language": "javascript",
+            "description": "scripts",
+            "version": "1.0.0",
+            "entry": "scripts/main/js/nxmbers/scratch-trident",
+            "uuid": "36af8434-d9ba-4d42-a0f3-6ee66c477d9c"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "scratch-trident",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Scripts for Scratch Trident addon, whose target is to recreate vanilla trident with riptide enchantment, but not colliding with entities. This is intended to be use for an MCC Ace Race Recreation",
+  "main": "swc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "NxmbersCib",
+  "license": "ISC",
+  "dependencies": {
+    "@minecraft/server": "^1.13.0"
+  }
+}
