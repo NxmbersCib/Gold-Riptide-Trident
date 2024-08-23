@@ -19,8 +19,14 @@
             "language": "javascript",
             "description": "scripts",
             "version": "1.0.0",
-            "entry": "scripts/main/js/nxmbers/scratch-trident",
+            "entry": "scripts/main/js/nxmbers/scratch-trident/Main.js",
             "uuid": "36af8434-d9ba-4d42-a0f3-6ee66c477d9c"
+        }
+    ],
+    "dependencies": [
+        {
+            "module_name": "@minecraft/server",
+            "version": "1.13.0"
         }
     ]
 }

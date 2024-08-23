@@ -1,0 +1,18 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "MCC Trident",
+        "description": "",
+        "uuid": "c80253ca-12d8-4667-800c-af659b934a0a",
+        "version": "1.0.0",
+        "min_engine_version": [1, 21, 20]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "description": "",
+            "uuid": "110a85f6-54c8-48c7-979c-011eb9ee632a",
+            "version": "1.0.0"
+        }
+    ]
+}
