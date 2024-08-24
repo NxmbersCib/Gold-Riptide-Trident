@@ -1,9 +1,4 @@
 import {
-    EntityEquippableComponent,
-    EquipmentSlot,
-    ItemComponentCompleteUseEvent,
-    ItemCustomComponent,
-    ItemFoodComponent,
     ItemReleaseUseAfterEvent,
     Player,
     system,
@@ -18,21 +13,6 @@ export default class TridentItem {
         world.afterEvents.itemReleaseUse.subscribe(
             this.onReleaseUse.bind(this),
         );
-        system.runInterval(() => system.runJob(this.tridentDrawController()));
-    }
-
-    public *tridentDrawController() {
-        for (const player of world.getAllPlayers()) {
-            const equippable = player.getComponent(
-                "equippable",
-            ) as EntityEquippableComponent;
-            const item = equippable.getEquipment(EquipmentSlot.Mainhand);
-            if (item.typeId != "nxmbers:mcc_trident") {
-                continue;
-            }
-            const food = item.getComponent("food") as ItemFoodComponent
-            
-        }
     }
 
     public applyImpulse(player: Player, vector: Vector3) {
@@ -77,18 +57,12 @@ export default class TridentItem {
 
             const impulse = new Vector3Builder(h, clampNumber(l, -3, 3), m);
             this.applyImpulse(player, impulse);
-            console.warn(l);
-            // if (player.isOnGround) {
-            //     this.applyImpulse(
-            //         player,
-            //         new Vector3Builder(player.getVelocity()).add(
-            //             new Vector3Builder( 0, 1.1999999284744263, 0),
-            //         ),
-            //     );
-            // }
+
+
             const sound = `item.trident.riptide_${Math.floor(
                 Math.random() * (3 - 1) + 1,
             )}`;
+            
             player.dimension.playSound(sound, player.location);
             player.playSound(sound);
         } catch (error) {
