@@ -13,22 +13,6 @@ export default class TridentItem {
         world.afterEvents.itemReleaseUse.subscribe(
             this.onReleaseUse.bind(this),
         );
-        system.runInterval(() => {
-            system.runJob(this.swirlAnimationController());
-        }, 1);
-    }
-
-    public *swirlAnimationController() {
-        for (const player of world.getAllPlayers()) {
-            const current = player.getProperty(
-                "nxmbers:trident_swirl",
-            ) as number;
-            if (current == 0) {
-                continue;
-            }
-            player.setProperty("nxmbers:trident_swirl", current - 1);
-            yield;
-        }
     }
 
     public applyImpulse(player: Player, vector: Vector3) {
@@ -95,8 +79,6 @@ export default class TridentItem {
                       new Vector3Builder(0, 1.1999999284744263, 0),
                   )
                 : 0;
-
-            player.setProperty("nxmbers:trident_swirl", 20);
 
             await system.waitTicks(1);
 

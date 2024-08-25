@@ -8,13 +8,13 @@
                     "animations": [
                         "wield_first_person",
                         {
-                            "wield_first_person_raise": "query.main_hand_item_use_duration > 0.0f && t.swirl_amount == 0 && query.is_in_water"
+                            "wield_first_person_raise": "query.main_hand_item_use_duration > 0.0f && query.is_in_water"
                         },
                         {
-                            "wield_first_person_raise_shake": "query.main_hand_item_use_duration > 0.0f && t.swirl_amount == 0 && query.is_in_water"
+                            "wield_first_person_raise_shake": "query.main_hand_item_use_duration > 0.0f && query.is_in_water"
                         },
                         {
-                            "wield_first_person_riptide": "query.can_damage_nearby_mobs > 0.0 || t.swirl_amount > 0"
+                            "wield_first_person_riptide": "query.can_damage_nearby_mobs > 0.0"
                         }
                     ],
                     "transitions": [

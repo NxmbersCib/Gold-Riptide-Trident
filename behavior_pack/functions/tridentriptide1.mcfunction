@@ -1,0 +1,1 @@
+scriptevent nxmbers:riptide_level 1
