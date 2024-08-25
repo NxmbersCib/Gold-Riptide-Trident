@@ -199,7 +199,7 @@
                         },
                         "holding",
                         {
-                            "brandish_spear": "variable.is_brandishing_spear || (query.is_item_name_any('slot.weapon.mainhand', 'nxmbers:mcc_trident') && query.is_using_item)"
+                            "brandish_spear": "variable.is_brandishing_spear || (query.is_item_name_any('slot.weapon.mainhand', 'nxmbers:gold_trident') && query.is_using_item && query.is_in_water)"
                         },
                         {
                             "holding_spyglass": "variable.is_holding_spyglass"

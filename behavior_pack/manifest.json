@@ -1,7 +1,7 @@
 {
     "format_version": 2,
     "header": {
-        "name": "Scratch Trident",
+        "name": "Golden Trident",
         "description": "",
         "version": "1.0.0",
         "uuid": "43a46fe1-f888-4b4b-84bf-bf331b4128ef",
@@ -19,7 +19,7 @@
             "language": "javascript",
             "description": "scripts",
             "version": "1.0.0",
-            "entry": "scripts/main/js/nxmbers/scratch-trident/Main.js",
+            "entry": "scripts/main/js/nxmbers/gold-trident/Main.js",
             "uuid": "36af8434-d9ba-4d42-a0f3-6ee66c477d9c"
         }
     ],

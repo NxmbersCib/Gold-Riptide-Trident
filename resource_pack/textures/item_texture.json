@@ -1,0 +1,9 @@
+{
+    "texture_name": "atlas.items",
+    "resource_pack_name": "atlas.items",
+    "texture_data": {
+        "gold_trident": {
+            "textures": "textures/item/gold_trident"
+        }
+    }
+}

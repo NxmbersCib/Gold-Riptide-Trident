@@ -2,7 +2,7 @@ import { transformFile } from "@swc/core";
 import { sync } from "glob";
 import { mkdirSync, readFileSync, writeFileSync } from "fs";
 import { join, relative, dirname } from "path";
-const package_name = "MCC-Trident"
+const package_name = "Golden-Trident"
 const version = "1.0.0";
 
 const initialMS = Date.now();

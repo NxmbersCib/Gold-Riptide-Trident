@@ -7,10 +7,16 @@
             "is_spawnable": false,
             "is_summonable": false,
             "properties": {
-                "nxmbers:trident_draw": {
+                "nxmbers:trident_swirl": {
                     "client_sync": true,
-                    "default": 0.0,
-                    "type": "float"
+                    "default": 0,
+                    "type": "int",
+                    "range": [0, 20]
+                },
+                "nxmbers:trident_enchanted": {
+                    "client_sync": true,
+                    "default": false,
+                    "type": "bool"
                 }
             }
         },

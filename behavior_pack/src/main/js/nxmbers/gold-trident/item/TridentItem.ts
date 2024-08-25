@@ -13,6 +13,22 @@ export default class TridentItem {
         world.afterEvents.itemReleaseUse.subscribe(
             this.onReleaseUse.bind(this),
         );
+        system.runInterval(() => {
+            system.runJob(this.swirlAnimationController());
+        }, 1);
+    }
+
+    public *swirlAnimationController() {
+        for (const player of world.getAllPlayers()) {
+            const current = player.getProperty(
+                "nxmbers:trident_swirl",
+            ) as number;
+            if (current == 0) {
+                continue;
+            }
+            player.setProperty("nxmbers:trident_swirl", current - 1);
+            yield;
+        }
     }
 
     public applyImpulse(player: Player, vector: Vector3) {
@@ -24,9 +40,21 @@ export default class TridentItem {
 
     public async onReleaseUse(event: ItemReleaseUseAfterEvent) {
         try {
-            const { source: player, itemStack } = event;
+            const { source: player, itemStack, useDuration } = event;
 
-            if (itemStack?.typeId != "nxmbers:mcc_trident") {
+            if (
+                itemStack?.typeId != "nxmbers:gold_trident" ||
+                useDuration > 71990 ||
+                !player.isInWater
+            ) {
+                return;
+            }
+
+            const level = (itemStack.getDynamicProperty(
+                "nxmbers:riptide_level",
+            ) ?? 1) as number;
+
+            if (!level) {
                 return;
             }
 
@@ -41,7 +69,21 @@ export default class TridentItem {
             let m = Math.cos(f * RAD) * Math.cos(g * RAD);
             let n = Math.sqrt(h * h + l * l + m * m);
 
-            let o = 2.0 * (1.0 + 3 / 4.0);
+            let lvl = 3;
+
+            switch (level) {
+                case 1:
+                    lvl = level - 2;
+                    break;
+                case 2:
+                    lvl = level - 1.5;
+                    break;
+                case 3:
+                    lvl = 3;
+                    break;
+            }
+
+            let o = 2.0 * (1.0 + lvl / 4.0);
 
             h *= o / n;
             l *= o / n;
@@ -53,16 +95,18 @@ export default class TridentItem {
                       new Vector3Builder(0, 1.1999999284744263, 0),
                   )
                 : 0;
+
+            player.setProperty("nxmbers:trident_swirl", 20);
+
             await system.waitTicks(1);
 
             const impulse = new Vector3Builder(h, clampNumber(l, -3, 3), m);
             this.applyImpulse(player, impulse);
 
-
             const sound = `item.trident.riptide_${Math.floor(
                 Math.random() * (3 - 1) + 1,
             )}`;
-            
+
             player.dimension.playSound(sound, player.location);
             player.playSound(sound);
         } catch (error) {
