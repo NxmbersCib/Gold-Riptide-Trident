@@ -26,7 +26,6 @@
                     "variable.hand_bob = 0.0;"
                 ],
                 "pre_animation": [
-                    "temp.in_water = query.is_in_ui || variable.is_paperdoll ? false : query.is_in_water;",
                     "temp.brandishing_custom_trident = query.is_in_ui || v.is_paperdoll ? false : query.is_item_name_any('slot.weapon.mainhand', 'nxmbers:gold_trident') && query.is_using_item;",
                     "variable.helmet_layer_visible = 1.0;",
                     "variable.leg_layer_visible = 1.0;",
