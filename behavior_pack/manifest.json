@@ -1,8 +1,8 @@
 {
     "format_version": 2,
     "header": {
-        "name": "Golden Trident",
-        "description": "",
+        "name": "§gGolden Trident B",
+        "description": "Pack that replicates almost perfectly the vanilla riptide trident behavior",
         "version": "1.0.0",
         "uuid": "43a46fe1-f888-4b4b-84bf-bf331b4128ef",
         "min_engine_version": [1, 21, 20]

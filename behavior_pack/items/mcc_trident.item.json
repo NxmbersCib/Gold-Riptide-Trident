@@ -21,7 +21,7 @@
             },
             "minecraft:can_destroy_in_creative": false,
             "minecraft:use_modifiers": {
-                "movement_modifier": 0.1,
+                "movement_modifier": 0.5,
                 "use_duration": 3600
             },
             "minecraft:icon": "gold_trident"

@@ -1,8 +1,8 @@
 {
     "format_version": 2,
     "header": {
-        "name": "Golden Trident",
-        "description": "",
+        "name": "§gGolden Trident R",
+        "description": "Resources for that pack that replicates almost perfectly the vanilla riptide trident behavior",
         "uuid": "c80253ca-12d8-4667-800c-af659b934a0a",
         "version": "1.0.0",
         "min_engine_version": [1, 21, 20]
@@ -10,7 +10,7 @@
     "modules": [
         {
             "type": "resources",
-            "description": "",
+            "description": "resources",
             "uuid": "110a85f6-54c8-48c7-979c-011eb9ee632a",
             "version": "1.0.0"
         }
